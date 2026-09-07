@@ -1,4 +1,4 @@
-[▶ Play online — no installation](https://retro-museum-games-482805962191.asia-southeast1.run.app/g/uno)
+[▶ Play online — no installation](https://play.retro-museum.net/g/uno)
 
 # UNO · Color party
 
