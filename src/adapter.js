@@ -1,0 +1,2 @@
+import {Uno} from '../server/uno.js';
+globalThis.RetroMuseumGame={create(players,saved,options={}){const game=new Uno(players,saved,options);return {action(id,action,value){if(action==='hostTimeUp'){game.finishTime?.();return;} return game.action(id,action,value);},advance(dt){return game.advance?.(dt);},snapshot(id){return game.snapshot(id);},save(){return game.save();},release(id){return game.release(id);},addPlayer(){/* New arrivals spectate until the next match. */},status(){return {winner:game.winner,requiredPlayers:players.map(p=>p.id)};}};}};
