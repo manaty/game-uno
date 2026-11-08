@@ -11,7 +11,7 @@ addEventListener('message',event=>{if(event.source!==parent||event.data?.retroMu
  if(m.type==='ack'||m.type==='error'){const wait=pending.get(m.id);if(wait){clearTimeout(wait.timeout);pending.delete(m.id);m.type==='ack'?wait.resolve():wait.reject(Object.assign(Error(m.message),{code:m.code}));}return;}
  if(m.type==='suspend'){window.dispatchEvent(new Event('blur'));return;}
  if(m.type!=='state')return;role=m.role;state={...m.state,experience:'uno',party:{...m.state.party,game:'uno',uno:m.state.party.community}};
- if(!view){audio=createGameAudio(role);transitions=createGameTransitions(role);view=createGamesView(app,role,{send,notice,audio});audio.subscribe(s=>{sound.textContent=s.ready?'♪':'♪ '+({fr:'Activer le son',tl:'Paganahin ang tunog'}[state.language]||'Enable sound');music.textContent=s.musicMuted?'♫ ×':'♫';});}
+ if(!view){audio=createGameAudio(role);transitions=createGameTransitions(role);view=createGamesView(app,role,{send,notice,audio});audio.subscribe(s=>{const label=({fr:'Activer le son',tl:'Paganahin ang tunog'}[state.language]||'Enable sound');sound.textContent=role==='controller'||s.ready?'♪':'♪ '+label;sound.setAttribute('aria-label',label);sound.title=label;music.textContent=s.musicMuted?'♫ ×':'♫';});}
  music.hidden=role!=='display';view.update(state,m.online);audio.observe(state);transitions.observe(state);if(m.renderId)tell('rendered',{renderId:m.renderId});
 });
 app.addEventListener('click',event=>{const button=event.target.closest('button');if(!button||button.disabled)return;if(button.hasAttribute('data-fullscreen')){toggleFullscreen(document);return;}if(button.dataset.action)send(button.dataset.action).catch(e=>notice(e.message));});

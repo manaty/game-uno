@@ -6,6 +6,20 @@ Play UNO · Color party together on a shared screen, using phones as controllers
 
 An independent, open-source Manaty game for 2–7 players. English, French and Tagalog. No Retro Museum installation or account is required to run it.
 
+## Solo with robots
+
+With a bot-capable Retro Museum SDK host, **Play solo** creates a room with one
+human and the required robot opponent. The organiser can add or remove robots
+within the game's player limit and choose Easy, Medium or Hard separately for
+each one before starting. The complete player view opens on a single device;
+no additional screen or QR scan is needed. Bot support requires the updated SDK;
+the repository's pinned older SDK must be updated for a standalone release.
+
+Easy plays a random legal card. Medium plans its colors and declares UNO. Hard
+also prioritizes blocking the next player when they are close to finishing.
+Robots see only their own hand and the public game state. The normal server
+rules validate every draw, card, wild color and UNO action.
+
 ## Play on your own server
 
 ```sh

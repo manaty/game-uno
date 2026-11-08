@@ -117,3 +117,23 @@
 
 /* Room invitations are owned by the host and stay visible beside the game. */
 .game-display .game-stage{padding-right:0}.game-display .game-pair-dock{display:none}
+.game-phone .game-header h1{max-width:calc(100vw - 75px);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+@media(max-width:600px) and (max-height:620px){
+ .game-phone{padding:8px;gap:5px}
+ .game-phone .game-brand,.game-phone .game-footer{display:none}
+ .game-phone .game-header h1{font-size:16px;margin:0}
+ .game-phone .game-stage{justify-content:flex-start;min-height:0;overflow:auto}
+ .game-phone .game-scoreboard{gap:4px;flex-wrap:nowrap;justify-content:flex-start;overflow:auto;flex-shrink:0;min-height:34px}
+ .game-phone .game-player{padding:3px 5px;font-size:10px;flex:0 0 auto;white-space:nowrap}
+ .game-phone .game-message{font-size:12px;min-height:16px}
+ .game-phone .uno-table{flex-shrink:0;min-height:85px;gap:12px;margin:0 0 6px}
+ .game-phone .uno-table .uno-card,.game-phone .uno-deck{height:80px;width:55px;min-width:55px}
+ .game-phone .uno-hand{padding:8px;min-height:180px;flex:1;display:flex;flex-direction:column;margin:0 auto}
+ .game-phone .uno-hand-heading{flex-shrink:0;margin-bottom:4px}.game-phone .uno-hand-heading h2{font-size:14px}
+ .game-phone .uno-cards{flex:1;min-height:60px;max-height:none;overflow:auto;padding:4px;gap:5px}
+ .game-phone .uno-cards .uno-card{width:52px;min-width:52px;height:78px}
+ .game-phone .uno-cards .uno-card>strong{font-size:25px}
+ .game-phone .uno-actions{flex-shrink:0;margin-top:6px;gap:6px}
+ .game-phone .uno-actions .button,.game-phone .uno-call{min-height:40px;padding:6px 10px;font-size:12px}
+ .game-phone .game-rules-details{display:none}
+}

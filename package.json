@@ -1,6 +1,6 @@
 {
   "name": "@manaty/game-uno",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "type": "module",
   "license": "MIT",
   "description": "Play UNO · Color party together on a shared screen, using phones as controllers. 2–7 players.",
@@ -15,7 +15,7 @@
     "test": "node --test test/*.test.js"
   },
   "dependencies": {
-    "@manaty/retro-museum-sdk": "https://github.com/manaty/retro-museum-sdk/archive/96dcefbae9a058bcb865b98bdee797686524b84a.tar.gz",
+    "@manaty/retro-museum-sdk": "https://github.com/manaty/retro-museum-sdk/archive/fe1dad4bcfdb0b07840e55267d19cc947227c710.tar.gz",
     "three": "0.185.1"
   },
   "devDependencies": {
